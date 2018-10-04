@@ -376,6 +376,7 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
     [_applicationWindow addSubview:fadeView];
 
     UIImageView *resizableImageView = [[UIImageView alloc] initWithImage:imageFromView];
+    resizableImageView.layer.cornerRadius = _senderViewOriginalFrame.layer.cornerRadius;
     resizableImageView.frame = _senderViewOriginalFrame;
     resizableImageView.clipsToBounds = YES;
     resizableImageView.contentMode = _senderViewForAnimation ? _senderViewForAnimation.contentMode : UIViewContentModeScaleAspectFill;
@@ -438,6 +439,7 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
     CGRect imageViewFrame = [self animationFrameForImage:imageFromView presenting:NO scrollView:scrollView];
 
     UIImageView *resizableImageView = [[UIImageView alloc] initWithImage:imageFromView];
+    resizableImageView.layer.cornerRadius = _senderViewOriginalFrame.layer.cornerRadius;
     resizableImageView.frame = imageViewFrame;
     resizableImageView.contentMode = _senderViewForAnimation ? _senderViewForAnimation.contentMode : UIViewContentModeScaleAspectFill;
     resizableImageView.backgroundColor = [UIColor clearColor];
